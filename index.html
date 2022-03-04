@@ -3,72 +3,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart </title>
+    <title>Registration</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&family=Poppins:wght@100&display=swap');
-        body{
-            background-color: black;
-        }
-    .mainbox{
-        height: 95%;
-        width: 100%;
-        display: flex;
-        margin: auto;
-        background-color:#f6f6f6;
-        margin-top: 40px;
-    }
-    .subbox{
-        height: 97%;
-        width: 30%;
-        margin: auto;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    img{
-        width: 100%;
-    }
+        
+       body{
+           background:black;
+       }
+      .mainbox{
+          border: 1px solid red;
+          height: 100%;
+          width: 80%;
+          margin: auto;
+          background-color: white;
+          display: flex;
+          background-color: white;
 
-   h1{
-    font-family:sans-serif;
-    }
-    h2{
-        font-family:Montserrat, Poppins;
-        font-size: 21px;
-    }
-    a{
-        font-family:sans-serif;
-        color: black;  
-        font-weight: bolder;
+      }
+      .smallbox{
+          
+          height: 70%;
+          width: 40%;
+          margin: auto;
+          background-color: white;
+      }
+      .left{
+        margin-top: 54px;;
+      }
+      .right{
+          background-color: black;
+          width: 30% ;
+      }
+      h1{
+        font-family: monospace;
+        margin-left: 20px;
+        margin-top: 60px;
+      }
+      input{
+        margin-left: 20px;
         padding: 10px;
-    }
-    h2,h1{
-        padding: 10px;
-    }
-    
+        padding-left: 130px;
+      }
+      h3,h2,p{
+          color: white;
+          font-family: sans-serif;
+          margin-left: 30px;
+            font-size: 25px;
+            margin-top: 45px;
+         }
+         .big{
+             font-size: 40px;
+         }
+         .mobile{
+             color: red;
+             margin-top: 6px;
+            font-family: sans-serif;
+            font-size: 24px;
+        }
+        .reg{
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 20px 110px 20px 110px;
+            margin-left: 30px;
+        } 
+        
+      
     </style>
 </head>
 <body>
     <div class="mainbox">
-        <div class="subbox">
-            <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog1.jpg.pagespeed.ic.s1W931fRN7.webp" alt="" >
-            <h2>Fashion Tips</h2>
-            <h1>What Curling Iron Are The Best Ones</h1>
-            <h2>Consectetur adipisicing elit. Laborum funga incidunt laboriosam voluptas iure,delectus..</h2>
-            <a href="">Read More</a>
-        </div>
-        <div class="subbox">
-            <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog2.jpg.pagespeed.ic.JaQe05m-gL.webp" alt="">
-            <h2>Fashion Tips</h2>
-            <h1>Vogue's Ultimate Guide To Autumn/Winter 2019 Shoes</h1>
-            <h2>Consectetur adipisicing elit. Laborum funga incidunt laboriosam voluptas iure,delectus..</h2>
-            <a href="">Read More</a>
-        </div>
-        <div class="subbox">
-            <img src="https://preview.colorlib.com/theme/capitalshop/assets/img/gallery/xblog3.jpg.pagespeed.ic.hExcbkUXD4.webp" alt="">
-            <h2>Fashion Tips</h2>
-            <h1>What Curling Iron Are The Best Ones</h1>
-            <h2>Consectetur adipisicing elit. Laborum funga incidunt laboriosam voluptas iure,delectus..</h2>
-            <a href="">Read More</a>
-        </div>
+    <div class="smallbox left">
+        <h1 >Name</h1>
+        <input type="text">
+        <h1 >Email</h1>
+        <input type="text">
+        <h1 >Mobile</h1>
+        
+        <input type="text">
+        <h1 class="mobile">Enter a valid Mobile</h1>
+     <button class="reg">REGISTER</button>
     </div>
+    <div class="smallbox right">
+        <h3 class="fss">Name</h3>
+        <h2 class="big">Masai</h2>
+        <p>Email</p>
+        <p>ravicoder332@gmail.com</p>
+        <p>Mobile</p>
+        <p>737848389</p>
+       
+    </div>
+</div>
 </body>
 </html>
