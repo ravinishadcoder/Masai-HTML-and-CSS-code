@@ -1,97 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Calculator</title>
     <style>
+      h1 {
+        text-align: center;
+        font-size: 60px;
+        color: teal;
+      }
+      #calculator{
+        padding: 20px;
+        height: 470px;
+    width: 400px;
+    margin: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      #input{
+         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 330px;
+    height: 70px;
+    margin: auto;
+    border-radius: 10px;
+      }
+      #keyboard{
         
-       body{
-           background:black;
-       }
-      .mainbox{
-          border: 1px solid red;
-          height: 100%;
-          width: 80%;
-          margin: auto;
-          background-color: white;
-          display: flex;
-          background-color: white;
+    width: 330px;
+    height: 350px;
+    margin: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4, 75px);
+    gap: 10px;
+    justify-content: center;
+      }
+      #keyboard>div{
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+       justify-content: center;
+        font-weight: 700;
+        padding: 25px;
+        display: flex;
+        border-radius: 10px;
+        font-size: 25px;
+      }
+      #black{
+        background-color: black;
+        color: white;
+      }
+      #keyboard>div:hover{
+        cursor: pointer;
+        background-color: cadetblue;
+      }
 
-      }
-      .smallbox{
-          
-          height: 70%;
-          width: 40%;
-          margin: auto;
-          background-color: white;
-      }
-      .left{
-        margin-top: 54px;;
-      }
-      .right{
-          background-color: black;
-          width: 30% ;
-      }
-      h1{
-        font-family: monospace;
-        margin-left: 20px;
-        margin-top: 60px;
-      }
-      input{
-        margin-left: 20px;
-        padding: 10px;
-        padding-left: 130px;
-      }
-      h3,h2,p{
-          color: white;
-          font-family: sans-serif;
-          margin-left: 30px;
-            font-size: 25px;
-            margin-top: 45px;
-         }
-         .big{
-             font-size: 40px;
-         }
-         .mobile{
-             color: red;
-             margin-top: 6px;
-            font-family: sans-serif;
-            font-size: 24px;
-        }
-        .reg{
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 20px 110px 20px 110px;
-            margin-left: 30px;
-        } 
-        
-      
+      /* use grid to acheive the layout */
     </style>
-</head>
-<body>
-    <div class="mainbox">
-    <div class="smallbox left">
-        <h1 >Name</h1>
-        <input type="text">
-        <h1 >Email</h1>
-        <input type="text">
-        <h1 >Mobile</h1>
-        
-        <input type="text">
-        <h1 class="mobile">Enter a valid Mobile</h1>
-     <button class="reg">REGISTER</button>
+  </head>
+  <body>
+    <h1>Masai Calculator</h1>
+    <div id="calculator">
+      <div id="input"></div>
+      <div id="keyboard">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div id="black">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div id="black">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div id="black">x</div>
+        <div style="background-color: red;color: white;">C</div>
+        <div>0</div>
+        <div id="black">=</div>
+        <div id="black">/</div>
+      </div>
     </div>
-    <div class="smallbox right">
-        <h3 class="fss">Name</h3>
-        <h2 class="big">Masai</h2>
-        <p>Email</p>
-        <p>ravicoder332@gmail.com</p>
-        <p>Mobile</p>
-        <p>737848389</p>
-       
-    </div>
-</div>
-</body>
+  </body>
 </html>
