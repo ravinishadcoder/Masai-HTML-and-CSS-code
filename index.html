@@ -4,81 +4,129 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Masai Calculator</title>
+    <title>Document</title>
     <style>
       h1 {
         text-align: center;
-        font-size: 60px;
-        color: teal;
+        color: #f84364;
+        margin-bottom: 80px;
       }
-      #calculator{
-        padding: 20px;
-        height: 470px;
-    width: 400px;
-    margin: auto;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      }
-      #input{
-         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    width: 330px;
-    height: 70px;
-    margin: auto;
-    border-radius: 10px;
-      }
-      #keyboard{
+      #container{
+        width: 60%;
+        height: auto;
+        display: grid;
         
-    width: 330px;
-    height: 350px;
-    margin: auto;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(4, 75px);
-    gap: 10px;
-    justify-content: center;
+        margin: auto;
+        grid-template-columns: repeat(2,1fr);
+        /* grid-template-rows: repeat(3,150px); */
+        gap: 20px;
       }
-      #keyboard>div{
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-       justify-content: center;
-        font-weight: 700;
-        padding: 25px;
+      #container>div{
+        border: 0.5px solid rgb(235, 18, 144);
         display: flex;
-        border-radius: 10px;
-        font-size: 25px;
       }
-      #black{
-        background-color: black;
+      #container>div>div{
+        margin-left: 20px;
+      }
+      button{
+        border: 0px;
+        background-color: #b60929;
         color: white;
+        padding: 10px 45px;
+        border-radius: 10px;
       }
-      #keyboard>div:hover{
-        cursor: pointer;
-        background-color: cadetblue;
+      img{
+        height: 150px;
+        width: 150px;
       }
+      
 
-      /* use grid to acheive the layout */
+      /* Medium screens */
+      @media only screen and (min-width: 421px) and (max-width: 780px) {
+        img{
+          border-radius: 50%;
+          
+        }
+        #container{
+          grid-template-rows: auto;
+         
+        }
+        #container>div{
+          flex-direction: column;
+          padding: 15px;
+        }
+      }
+      
+      /* small screens */
+      @media only screen and (min-width: 70px) and (max-width: 420px) {
+        img{
+          border-radius: 50%;
+          
+        }
+        #container{
+          grid-template-columns: repeat(1,1fr);
+          grid-template-rows: auto;
+         
+        }
+        #container>div{
+          flex-direction: column;
+          padding: 15px;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Masai Calculator</h1>
-    <div id="calculator">
-      <div id="input"></div>
-      <div id="keyboard">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div id="black">+</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div id="black">-</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div id="black">x</div>
-        <div style="background-color: red;color: white;">C</div>
-        <div>0</div>
-        <div id="black">=</div>
-        <div id="black">/</div>
+    <!-- image link - 
+      https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg -->
+    <h1>Just movies</h1>
+    <div id="container">
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
+      </div>
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
+      </div>
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
+      </div>
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
+      </div>
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
+      </div>
+      <div>
+        <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg" alt="">
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11th March 2022</p>
+          <button>Book tickets</button>
+        </div>
       </div>
     </div>
   </body>
