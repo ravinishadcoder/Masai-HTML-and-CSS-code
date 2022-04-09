@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>Paymen tForm</title>
+</head>
+
+<body>
+    <form action="">
+       
+        <p>Requred Fileds are followed by *</p>
+      
+        <h2>
+            Payment information
+        </h2>
+        <p> card type:*
+            <select name="card type" id="card type" required>
+                <option value="">~~select a card type~~</option>
+                <option value="rupay">rupay</option>
+             <option value="master card">master card</option>
+                <option value="visa">visa</option>
+            </select>
+        </p>
+        <p>
+            card number* <input type="number" name="card" id="card" required> >
+        </p>
+        <p>
+            exp date *<input type="month" name="exp date" id="exp date" required>
+        </p>
+        <p>
+            cvv* <input type="password" name="cvv" id="cvv" required>
+
+        </p>
+        <input type="submit" value="paynow">
+    </form>
+</body>
+
+</html>

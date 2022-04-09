@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #navbar {
+        display: flex;
+        justify-content: space-around;
+        background-color: teal;
+        padding: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      #navbar a:hover {
+        color: white;
+      }
+      #navbar a {
+        cursor: pointer;
+      }
+        span{
+            background-color: aqua;
+            text-align: center;
+            color: rgb(68, 0, 255);
+            padding: 0px 30px 0px 30px;
+        }
+        #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .strike{
+          display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    text-decoration: line-through;
+      }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a target="_blank" href="men.html">Men</a></div>
+        <div><a href="women.html">Women</a></div>
+        <div><a href="signup.html">Signup</a></div>
+        <div><a href="login.html">Login</a></div>
+        <div><a href="cart.html">Go to Cart</a></div>
+      </div>
+      <br>
+    <select name="" id="byname" onchange="sortbyname()">
+      <option value="">sort by</option>
+      <option value="inc">a-To-z</option>
+      <option value="dec">z-To-a</option>
+    </select>
+    <select name="" id="byprice" onchange="sortbyprice()">
+      <option value="">sort by price</option>
+      <option value="htl">heigh to low</option>
+      <option value="lth">low to heigh</option>
+    </select>
+    <div id="container"></div>
+    <button id="remove">remove item</button>
+    <h3></h3>
+    <input id="promo" type="text" placeholder="enter promocode " onchange="promocode()">
+    <br>
+    <br>
+    <button ><a href="payment.html">Go to payment</a></button>
+</body>
+</html>
+<script>
+    var myCart = JSON.parse(localStorage.getItem("AddtoCart")) ;
+    
+    display(myCart)
+    var total = myCart.reduce(function(sum,ele){
+      return sum+Number(ele.price);
+    },0)
+    var h = document.querySelector("h3");
+    h.innerText = `Your total cart price is Rs.  ${total}`;
+   function promocode(){
+     var userPromo = document.querySelector("#promo").value ;
+     
+    console.log(userPromo)
+    
+    if(userPromo==="masai30"){
+      var discount = (30/100)*total;
+      total = total-discount;
+      //console.log(total)
+      //total = total
+      h.innerText = `Your total cart price is Rs.  ${total}`
+    }
+    else{
+     alert("invalid promocode");
+    }
+   }
+    
+   function sortbyprice(){
+     var selected = document.querySelector("#byprice").value;
+     if(selected=="htl"){
+       myCart.sort(function(a,b){
+          return b.price - a.price
+        
+       })
+       display(myCart)
+     }
+     if(selected=="lth"){
+       myCart.sort(function(a,b){
+          return a.price - b.price
+        
+       })
+       display(myCart)
+     }
+    
+   }
+   
+    function sortbyname(){
+      var input = document.querySelector("#byname").value;
+      if(input==="inc"){
+       myCart.sort(function(a,b){
+        if (a.name > b.name) return 1;
+          if (a.name < b.name) return -1;
+          return 0;
+        //console.log(a.name)
+       })
+       display(myCart)
+      }
+      if(input==="dec"){
+       myCart.sort(function(a,b){
+        if (a.name > b.name) return -1;
+          if (a.name < b.name) return 1;
+          return 0;
+       })
+       display(myCart)
+      }
+     
+     
+    }
+    
+    
+    
+    function display(myCart){
+      document.querySelector("#container").innerHTML = "";
+    myCart.map(function(ele,index){
+     
+   var box = document.createElement("div");
+   var img = document.createElement("img");
+   img.src = ele.image_url;
+   var h1 = document.createElement("h4");
+   h1.innerText=ele.name;
+   var h4 = document.createElement("h4");
+   h4.innerText = ele.price ;
+   var h3 = document.createElement("h4");
+   h3.setAttribute("class","strike");
+   h3.innerText=ele.strikedoffprice;
+   var p = document.createElement("h2");
+   var remove = document.querySelector("#remove");
+   remove.addEventListener("click" ,function(){
+     removecart(ele,index)
+   })
+   
+   box.append(img,h1,h4,h3)
+   document.querySelector("#container").append(box);
+
+  })
+}
+function removecart(ele,index){
+  console.log("working")
+  myCart.splice(index,1);
+  console.log(myCart)
+  localStorage.setItem("AddtoCart",JSON.stringify(myCart))
+  // display(myCart)
+  window.location.reload();
+}
+</script>
